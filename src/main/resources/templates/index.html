@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Weather App</title>
+</head>
+<body>
+<h1>Weather App</h1>
+
+<form method="get" action="/">
+    <input name="city" placeholder="Marseille" />
+    <button type="submit">Chercher</button>
+</form>
+
+<div th:if="${latest != null}">
+    <h2 th:text="'Météo de ' + ${latest.city}"></h2>
+    <p th:text="'Température: ' + ${latest.temperature} + ' °C'"></p>
+    <p th:text="'Humidity: ' + ${latest.humidity} + ' %'"></p>
+    <p th:text="'Average: ' + ${avg} + ' °C'"></p>
+    <p th:text="'Tendance: ' + ${trend}"></p>
+</div>
+
+<h2>Enregistrement stockée</h2>
+<ul>
+    <li th:each="r : ${records}"
+        th:text="${r.city} + ' | ' + ${r.temperature} + '°C | hum ' + ${r.humidity} + '% | ' + ${r.timestamp}">
+    </li>
+</ul>
+</body>
+</html>
