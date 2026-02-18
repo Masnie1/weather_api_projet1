@@ -3,6 +3,7 @@ package com.example.controller;
 import com.example.services.WeatherAnalysisService;
 import com.example.services.WeatherApiService;
 import com.example.stockage.WeatherStockage;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -11,7 +12,8 @@ import org.springframework.web.bind.annotation.*;
 public class WeatherPageController {
 
     private final WeatherApiService api;
-    private final WeatherStockage store;
+    @Autowired
+    private WeatherStockage store;
     private final WeatherAnalysisService analysis;
 
     public WeatherPageController(WeatherApiService api, WeatherStockage store, WeatherAnalysisService analysis) {

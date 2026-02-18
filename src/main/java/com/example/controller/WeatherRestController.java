@@ -4,6 +4,7 @@ import com.example.models.WeatherRecord;
 import com.example.services.WeatherAnalysisService;
 import com.example.services.WeatherApiService;
 import com.example.stockage.WeatherStockage;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
@@ -14,8 +15,9 @@ import java.util.Map;
 @RequestMapping("/api/weather")
 public class WeatherRestController {
 
-    private final WeatherApiService api;
-    private final WeatherStockage store;
+    private WeatherApiService api;
+    @Autowired
+    private  WeatherStockage store;
     private final WeatherAnalysisService analysis;
 
     public WeatherRestController(WeatherApiService api, WeatherStockage store, WeatherAnalysisService analysis) {

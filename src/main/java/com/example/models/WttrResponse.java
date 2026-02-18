@@ -18,9 +18,6 @@ public class WttrResponse {
         private String humidity;
 
         public String getTemp_C() { return temp_C; }
-        public void setTemp_C(String temp_C) { this.temp_C = temp_C; }
-
         public String getHumidity() { return humidity; }
-        public void setHumidity(String humidity) { this.humidity = humidity; }
     }
 }
