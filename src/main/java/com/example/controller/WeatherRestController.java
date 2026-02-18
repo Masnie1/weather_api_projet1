@@ -64,7 +64,7 @@ public class WeatherRestController {
         );
     }
 
-    // ✅ “plusieurs appels GET” : batch de villes
+    // batch de villes
     @GetMapping("/batch")
     public List<WeatherRecord> batch(@RequestParam String cities) {
         return Arrays.stream(cities.split(","))

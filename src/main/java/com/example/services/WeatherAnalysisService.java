@@ -2,6 +2,7 @@ package com.example.services;
 
 import com.example.models.WeatherRecord;
 import com.example.stockage.WeatherStockage;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Comparator;
@@ -10,6 +11,7 @@ import java.util.List;
 @Service
 public class WeatherAnalysisService {
 
+    @Autowired
     private final WeatherStockage store;
 
     public WeatherAnalysisService(WeatherStockage store) {
